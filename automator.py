@@ -11,7 +11,8 @@ import os
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 options.add_argument("--profile-directory=Default")
-options.add_argument("--user-data-dir=/var/tmp/chrome_user_data")
+#options.add_argument("--user-data-dir=/var/tmp/chrome_user_data")
+#options.add_argument("--disable-dev-shm-usage")
 
 os.system("")
 os.environ["WDM_LOG_LEVEL"] = "0"
@@ -56,7 +57,7 @@ for line in f.read().splitlines():
 f.close()
 total_number=len(numbers)
 print(style.RED + 'We found ' + str(total_number) + ' numbers in the file' + style.RESET)
-delay = 30
+delay = 10
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 print('Once your browser opens up sign in to web whatsapp')
